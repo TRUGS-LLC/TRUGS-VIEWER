@@ -1,0 +1,9 @@
+TRUGS-VIEWER
+Copyright (c) 2026 TRUGS LLC
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+It includes third-party software under permissive licenses (MIT, ISC, BSD, Zlib,
+Apache-2.0). The complete per-package attribution manifest is in THIRD_PARTY_LICENSES,
+generated from the resolved dependency tree. Notable: the "postprocessing" package is
+distributed under the Zlib license (not MIT).

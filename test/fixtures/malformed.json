@@ -1,0 +1,1 @@
+{ "name": "broken", "nodes": [ { "id": "a" }, { "id": "b" } ,  <-- not valid json

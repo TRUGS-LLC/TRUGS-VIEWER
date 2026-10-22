@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  typecheck-and-license:
+    name: Typecheck + license gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: TypeScript strict typecheck
+        run: npm run typecheck
+      - name: License gate — PASS on the real lockfile
+        run: npm run license:check
+      - name: License gate — must FIRE on the copyleft fixture (negative-path proof)
+        run: |
+          if npm run license:check -- --lockfile test/fixtures/copyleft.lock; then
+            echo "::error::license gate did NOT fire on the copyleft fixture (silently passed)"
+            exit 1
+          else
+            echo "OK: license gate fired (non-zero exit) on the copyleft fixture"
+          fi
+
+  test:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Vitest
+        run: npm test -- --run

@@ -1,0 +1,20 @@
+{
+  "name": "valid_small",
+  "version": "1.0.0",
+  "type": "PROJECT",
+  "dimension": "system",
+  "dimensions": { "system": { "description": "small valid fixture for loader tests" } },
+  "nodes": [
+    { "id": "root", "type": "PROJECT", "properties": {}, "parent_id": null, "contains": ["a", "b"], "metric_level": "DEKA_PROJECT", "dimension": "system" },
+    { "id": "a", "type": "PARTY", "properties": { "operation": "VALIDATE" }, "parent_id": "root", "contains": [], "metric_level": "BASE_SERVICE", "dimension": "system" },
+    { "id": "b", "type": "INTERFACE", "properties": {}, "parent_id": "root", "contains": ["c"], "metric_level": "BASE_SERVICE", "dimension": "system" },
+    { "id": "c", "type": "RECORD", "properties": {}, "parent_id": "b", "contains": [], "metric_level": "CENTI_FUNCTION", "dimension": "system" }
+  ],
+  "edges": [
+    { "from_id": "root", "to_id": "a", "relation": "CONTAINS" },
+    { "from_id": "root", "to_id": "b", "relation": "CONTAINS" },
+    { "from_id": "a", "to_id": "b", "relation": "PRECEDES" },
+    { "from": "b", "to": "c", "relation": "CONTAINS" },
+    { "source": "c", "target": "a", "relation": "REFERENCES" }
+  ]
+}

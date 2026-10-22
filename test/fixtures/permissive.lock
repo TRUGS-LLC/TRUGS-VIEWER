@@ -1,0 +1,9 @@
+{
+  "trugs-viewer@0.1.0": { "licenses": "Apache-2.0" },
+  "react@19.0.0": { "licenses": "MIT" },
+  "react-dom@19.0.0": { "licenses": "MIT" },
+  "three@0.171.0": { "licenses": "MIT" },
+  "postprocessing@6.36.0": { "licenses": "Zlib" },
+  "d3-force-3d@3.0.5": { "licenses": "ISC" },
+  "dual-licensed@1.0.0": { "licenses": "(MIT OR Apache-2.0)" }
+}

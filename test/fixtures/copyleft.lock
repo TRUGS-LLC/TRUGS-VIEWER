@@ -1,0 +1,7 @@
+{
+  "trugs-viewer@0.1.0": { "licenses": "Apache-2.0" },
+  "react@19.0.0": { "licenses": "MIT" },
+  "some-zlib-dep@1.0.0": { "licenses": "Zlib" },
+  "evil-copyleft-lib@2.3.0": { "licenses": "GPL-3.0-only", "repository": "https://example.invalid/evil-copyleft-lib" },
+  "another-bad-one@0.1.0": { "licenses": "LGPL-2.1" }
+}
