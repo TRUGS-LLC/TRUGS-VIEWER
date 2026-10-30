@@ -45,7 +45,7 @@ npx playwright install chromium
 npm run e2e
 ```
 
-They cover loading, rendering, errors and inspection, and include a hardware-dependent framerate measurement. A click may miss a moving node; check inspection manually if the test records that note.
+They cover loading, rendering, errors and inspection, and include a hardware-dependent framerate measurement, which fails its floor of 5 frames per second on a machine without a GPU. A click may miss a moving node; check inspection manually if the test records that note.
 
 `npm run license:gen` regenerates [NOTICE](NOTICE) and [THIRD_PARTY_LICENSES](THIRD_PARTY_LICENSES) from the installed dependencies. The license check rejects copyleft and unknown licenses.
 
